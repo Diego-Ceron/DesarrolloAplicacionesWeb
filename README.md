@@ -7,6 +7,8 @@ Repositorio del proyecto para la materia de Desarrollo de aplicaciones web
 - `develop` contiene la versión de integración de las nuevas funcionalidades.
 - `prototipo` contiene la versión integrada desde `develop` para realizar
   pruebas y validaciones antes de pasar a `main`.
+- `final` contiene la versión final integrada desde `develop` antes de pasar a
+  `main`.
 - Cada integrante debe crear su propia rama **a partir de `develop`** antes de
   comenzar a trabajar.
 - No se debe trabajar directamente sobre `main`, `develop` ni `prototipo`.
@@ -77,7 +79,26 @@ Cada PR debe:
 
 Una vez aprobado, el PR de cada integrante se integrará a `develop`. Después de
 validar la integración en `prototipo`, se podrá crear un PR de `prototipo` hacia
-`main` para publicar una versión estable.
+`main` para publicar la entrega del prototipo. De igual forma, la entrega final
+se integrará desde `final` hacia `main` mediante su respectivo PR.
+
+## Entregas
+
+Se realizarán dos entregas, cada una con su rama correspondiente antes de
+integrarse a `main`:
+
+| Entrega | Rama | Cuándo se entrega |
+|---------|------|-------------------|
+| Prototipo | `prototipo` | Jueves 19 de noviembre |
+| Final | `final` | Jueves 3 de diciembre |
+
+- **Entrega del prototipo:** jueves 19 de noviembre, desde la rama
+  `prototipo`.
+- **Entrega final:** jueves 3 de diciembre, desde la rama `final`.
+
+Para cada entrega, la rama correspondiente deberá contener los cambios
+validados y se deberá crear un Pull Request hacia `main` antes de realizar el
+merge.
 
 # Integrantes
 
