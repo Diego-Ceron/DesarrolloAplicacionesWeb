@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panel de administración de Medicitas">
+  <title>Administración | Medicitas</title>
+  <link rel="stylesheet" href="../css/compartido/base.css">
+  <link rel="stylesheet" href="../css/paginas/administrador.css">
+</head>
+<body>
+  <header class="admin-header">
+    <a class="admin-header-brand" href="../index.html">Medicitas</a>
+
+    <div class="admin-header-user">
+      <span>Administrador</span>
+      <button id="theme-button" type="button" aria-label="Cambiar tema">
+        Cambiar tema
+      </button>
+      <button id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar" aria-label="Navegación principal">
+      <nav>
+        <ul>
+          <li><a href="#resumen">Resumen</a></li>
+          <li><a href="#citas">Citas</a></li>
+          <li><a href="#usuarios">Usuarios</a></li>
+          <li><a href="#configuracion">Configuración</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="admin-content">
+      <header class="admin-content-header">
+        <h1>Panel de administración</h1>
+        <p>Consulta y administra la información de Medicitas.</p>
+      </header>
+
+      <section id="resumen" aria-labelledby="summary-title">
+        <h2 id="summary-title">Resumen</h2>
+
+        <div class="admin-summary">
+          <article class="admin-summary-card">
+            <h3>Citas de hoy</h3>
+            <p>0</p>
+          </article>
+
+          <article class="admin-summary-card">
+            <h3>Usuarios registrados</h3>
+            <p>0</p>
+          </article>
+
+          <article class="admin-summary-card">
+            <h3>Citas pendientes</h3>
+            <p>0</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="citas" aria-labelledby="appointments-title">
+        <h2 id="appointments-title">Citas recientes</h2>
+
+        <div class="admin-table-container">
+          <table>
+            <caption>Listado de citas recientes</caption>
+            <thead>
+              <tr>
+                <th scope="col">Paciente</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="4">No hay citas registradas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="usuarios" aria-labelledby="users-title">
+        <h2 id="users-title">Usuarios</h2>
+        <p>La gestión de usuarios estará disponible próximamente.</p>
+      </section>
+
+      <section id="configuracion" aria-labelledby="settings-title">
+        <h2 id="settings-title">Configuración</h2>
+        <p>Configura las opciones generales del sistema.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="admin-footer">
+    <p>&copy; 2026 Medicitas</p>
+  </footer>
+
+  <script src="../js/compartido/tema.js" defer></script>
+</body>
+</html>
