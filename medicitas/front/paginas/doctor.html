@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi agenda | MediCitas</title>
+
+    <link rel="stylesheet" href="../css/compartido/base.css">
+    <link rel="stylesheet" href="../css/paginas/doctor.css">
+    <link rel="stylesheet" href="../css/compartido/print.css">
+
+</head>
+
+<body>
+
+    <main class="page">
+
+        <header class="page-header">
+
+            <div>
+
+                <h1 id="saludo-doctor">
+                    Mi agenda
+                </h1>
+
+                <p class="muted" id="fecha-agenda"></p>
+
+            </div>
+
+            <div class="acciones-header no-print">
+
+                <button
+                    type="button"
+                    id="theme-button"
+                    class="btn secundario"
+                >
+                    Cambiar tema
+                </button>
+
+                <a
+                    href="disponibilidad.html"
+                    class="btn"
+                >
+                    Mi disponibilidad
+                </a>
+
+            </div>
+
+        </header>
+
+        <div id="mensaje-acceso" class="mensaje" hidden></div>
+
+        <div id="aviso-horario" class="aviso" hidden>
+
+            No tienes un horario de disponibilidad configurado.
+            Contacta al administrador para establecerlo.
+
+        </div>
+
+        <!-- RESUMEN -->
+
+        <section class="resumen">
+
+            <div class="tarjeta">
+
+                <span>Citas de hoy</span>
+
+                <strong id="total-hoy">0</strong>
+
+            </div>
+
+            <div class="tarjeta">
+
+                <span>Pendientes</span>
+
+                <strong id="total-pendientes">0</strong>
+
+            </div>
+
+            <div class="tarjeta">
+
+                <span>Atendidas</span>
+
+                <strong id="total-atendidas">0</strong>
+
+            </div>
+
+        </section>
+
+        <!-- AGENDA DEL DÍA -->
+
+        <section class="panel">
+
+            <h2>Agenda de hoy</h2>
+
+            <p class="muted">
+                Consulta tus pacientes y actualiza el estado de atención.
+            </p>
+
+            <div id="agenda-hoy" class="timeline"></div>
+
+        </section>
+
+        <!-- PRÓXIMAS CITAS -->
+
+        <section class="panel">
+
+            <h2>Próximas citas</h2>
+
+            <div class="tabla-wrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Paciente</th>
+                            <th>Motivo</th>
+                            <th>Estado</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="agenda-proximas"></tbody>
+
+                </table>
+
+            </div>
+
+            <p id="sin-proximas" class="mensaje-vacio" hidden>
+                No tienes próximas citas programadas.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="../js/compartido/tema.js"></script>
+    <script src="../js/compartido/utils.js"></script>
+    <script src="../js/compartido/mock-data.js"></script>
+    <script src="../js/compartido/medicitas-bridge.js"></script>
+    <script src="../js/paginas/doctor.js"></script>
+
+</body>
+</html>
