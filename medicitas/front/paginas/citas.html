@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Citas | MediCitas</title>
+
+    <link rel="stylesheet" href="../css/compartido/base.css">
+    <link rel="stylesheet" href="../css/paginas/citas.css">
+    <link rel="stylesheet" href="../css/compartido/print.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <header class="page-header">
+            <div>
+                <h1>Gestión de citas</h1>
+                <p class="subtitulo">
+                    Agenda, consulta y administra las citas médicas.
+                </p>
+            </div>
+
+            <a href="../index.html" class="no-print">
+                Volver al inicio
+            </a>
+        </header>
+
+        <div id="mensaje-permisos" class="mensaje-vacio" hidden></div>
+
+        <section class="layout-citas">
+
+            <!-- FORMULARIO -->
+
+            <article class="panel no-print">
+
+                <h2 id="titulo-formulario">Agendar cita</h2>
+
+                <form id="form-cita" class="form-grid">
+
+                    <input type="hidden" id="cita-id">
+
+                    <div class="campo">
+                        <label for="paciente">Paciente</label>
+
+                        <select id="paciente" required>
+                            <option value="">Selecciona un paciente</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="doctor">Doctor</label>
+
+                        <select id="doctor" required>
+                            <option value="">Selecciona un doctor</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="fecha">Fecha</label>
+
+                        <input type="date" id="fecha" required>
+                    </div>
+
+                    <div class="campo">
+
+                        <label>Horario disponible</label>
+
+                        <div id="cita-horas" class="horas">
+                            <p class="muted">
+                                Selecciona doctor y fecha.
+                            </p>
+                        </div>
+
+                        <div class="leyenda">
+                            <span>
+                                <i class="punto libre"></i>
+                                Libre
+                            </span>
+
+                            <span>
+                                <i class="punto seleccionado"></i>
+                                Seleccionada
+                            </span>
+
+                            <span>
+                                <i class="punto ocupado"></i>
+                                Ocupada
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <input type="hidden" id="hora-seleccionada">
+
+                    <div class="campo">
+                        <label for="motivo">Motivo de consulta</label>
+
+                        <textarea
+                            id="motivo"
+                            rows="3"
+                            maxlength="250"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="botones">
+
+                        <button type="submit" class="btn">
+                            Guardar cita
+                        </button>
+
+                        <button
+                            type="reset"
+                            id="limpiar"
+                            class="btn secundario"
+                        >
+                            Limpiar
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </article>
+
+            <!-- LISTADO -->
+
+            <article class="panel">
+
+                <h2>Listado de citas</h2>
+
+                <div class="filtros no-print">
+
+                    <input
+                        type="text"
+                        id="filtro-paciente"
+                        placeholder="Buscar paciente"
+                    >
+
+                    <select id="filtro-doctor">
+                        <option value="">Todos los doctores</option>
+                    </select>
+
+                    <input
+                        type="date"
+                        id="filtro-fecha"
+                        aria-label="Filtrar por fecha"
+                    >
+
+                </div>
+
+                <div class="tabla-wrap">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Paciente</th>
+                                <th>Doctor</th>
+                                <th>Estado</th>
+                                <th class="no-print">Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabla-citas"></tbody>
+
+                    </table>
+
+                </div>
+
+                <p id="sin-citas" class="mensaje-vacio" hidden>
+                    No hay citas para mostrar.
+                </p>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL DE CANCELACIÓN -->
+
+    <div
+        class="modal"
+        id="modal-cancelar"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-titulo"
+    >
+
+        <div class="modal-contenido">
+
+            <h2 id="modal-titulo">Cancelar cita</h2>
+
+            <p>
+                ¿Seguro que deseas cancelar esta cita?
+            </p>
+
+            <div class="botones">
+
+                <button
+                    type="button"
+                    id="confirmar-cancelacion"
+                    class="btn peligro"
+                >
+                    Sí, cancelar
+                </button>
+
+                <button
+                    type="button"
+                    id="cerrar-modal"
+                    class="btn secundario"
+                >
+                    Volver
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../js/compartido/tema.js"></script>
+    <script src="../js/compartido/utils.js"></script>
+    <script src="../js/compartido/mock-data.js"></script>
+    <script src="../js/compartido/medicitas-bridge.js"></script>
+    <script src="../js/paginas/citas.js"></script>
+
+</body>
+</html>
