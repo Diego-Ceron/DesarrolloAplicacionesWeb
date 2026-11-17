@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recepción | MediCitas</title>
+
+    <link rel="stylesheet" href="../css/compartido/base.css">
+    <link rel="stylesheet" href="../css/paginas/recepcion.css">
+    <link rel="stylesheet" href="../css/compartido/print.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <header class="page-header">
+
+            <div>
+                <h1>Recepción</h1>
+                <p class="muted" id="fecha-hoy"></p>
+            </div>
+
+            <div class="acciones-header no-print">
+
+                <button
+                    type="button"
+                    id="theme-button"
+                    class="btn secundario"
+                >
+                    Cambiar tema
+                </button>
+
+                <a href="citas.html" class="btn">
+                    Agendar cita presencial
+                </a>
+
+            </div>
+
+        </header>
+
+        <div id="mensaje-acceso" class="mensaje" hidden></div>
+
+        <!-- RESUMEN -->
+
+        <section class="resumen">
+
+            <div class="tarjeta">
+                <span>Citas esperadas</span>
+                <strong id="total-esperadas">0</strong>
+            </div>
+
+            <div class="tarjeta llegaron">
+                <span>Llegaron</span>
+                <strong id="total-llegaron">0</strong>
+            </div>
+
+            <div class="tarjeta faltaron">
+                <span>No asistieron</span>
+                <strong id="total-faltaron">0</strong>
+            </div>
+
+        </section>
+
+        <!-- LISTADO DE CITAS -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Citas de hoy</h2>
+                    <p class="muted">
+                        Consulta y registra la asistencia de los pacientes.
+                    </p>
+                </div>
+            </div>
+
+            <input
+                type="text"
+                id="buscar-paciente"
+                class="buscador no-print"
+                placeholder="Buscar por nombre del paciente"
+                autocomplete="off"
+            >
+
+            <div class="tabla-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Paciente</th>
+                            <th>Doctor</th>
+                            <th>Estado</th>
+                            <th class="no-print">Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabla-recepcion"></tbody>
+
+                </table>
+
+            </div>
+
+            <p id="sin-resultados" class="mensaje-vacio" hidden>
+                No hay citas para hoy.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="../js/compartido/tema.js"></script>
+    <script src="../js/compartido/utils.js"></script>
+    <script src="../js/compartido/mock-data.js"></script>
+    <script src="../js/compartido/medicitas-bridge.js"></script>
+    <script src="../js/paginas/recepcion.js"></script>
+
+</body>
+</html>
