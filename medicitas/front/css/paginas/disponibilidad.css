@@ -1,0 +1,179 @@
+[hidden] {
+  display: none !important;
+}
+
+.availability-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: #287f91;
+  color: #ffffff;
+}
+
+.availability-header-brand {
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.availability-header-user button {
+  margin-left: 0.5rem;
+  border: 1px solid rgb(255 255 255 / 70%);
+  background-color: transparent;
+}
+
+.availability-footer {
+  padding: 1rem;
+  border-top: 1px solid rgb(128 128 128 / 30%);
+  text-align: center;
+}
+
+.availability-content {
+  width: min(100% - 3rem, 75rem);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.availability-card {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid rgb(128 128 128 / 30%);
+  border-radius: 0.75rem;
+}
+
+.availability-card h2 {
+  margin-top: 0;
+}
+
+.availability-field {
+  margin-bottom: 0.9rem;
+}
+
+.availability-field label {
+  display: block;
+  font-weight: 700;
+}
+
+.availability-field input,
+.availability-field select,
+.availability-field textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid rgb(128 128 128 / 50%);
+  border-radius: 0.375rem;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.availability-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #287f91;
+  border-radius: 0.375rem;
+  background-color: #287f91;
+  color: #ffffff;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+.availability-button-secondary {
+  background-color: transparent;
+  color: inherit;
+}
+
+.availability-button-danger {
+  border-color: #c62828;
+  background-color: #c62828;
+}
+
+.availability-message {
+  padding: 0.75rem;
+  border-left: 0.3rem solid #287f91;
+  background-color: rgb(40 127 145 / 10%);
+}
+
+.availability-message.is-error {
+  border-color: #c62828;
+}
+
+.availability-content {
+  max-width: 50rem;
+}
+
+.availability-field select {
+  max-width: 20rem;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+caption {
+  padding: 0.5rem 0;
+  text-align: left;
+  font-weight: 700;
+}
+
+th,
+td {
+  padding: 0.6rem;
+  border-bottom: 1px solid rgb(128 128 128 / 30%);
+  text-align: left;
+}
+
+td select {
+  padding: 0.3rem;
+  border: 1px solid rgb(128 128 128 / 50%);
+  border-radius: 0.375rem;
+  background-color: transparent;
+  color: inherit;
+}
+
+td input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.is-day-off {
+  background-color: rgb(128 128 128 / 12%);
+  color: rgb(128 128 128);
+}
+
+.is-invalid select {
+  border-color: #c62828;
+}
+
+@media (max-width: 48rem) {
+  .availability-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  th,
+  td {
+    padding: 0.4rem;
+  }
+
+  thead th:nth-child(3),
+  thead th:nth-child(4) {
+    font-size: 0.8rem;
+  }
+}
