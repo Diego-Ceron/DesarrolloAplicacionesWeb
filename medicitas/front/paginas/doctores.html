@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de doctores de Medicitas">
+  <title>Doctores | Medicitas</title>
+  <link rel="stylesheet" href="../css/compartido/base.css">
+  <link rel="stylesheet" href="../css/paginas/doctores.css">
+</head>
+<body>
+  <header class="doctors-header">
+    <a class="doctors-header-brand" href="administrador.html">Medicitas</a>
+
+    <div class="doctors-header-user">
+      <span id="user-role">Administrador</span>
+      <button id="theme-button" type="button" aria-label="Cambiar tema">Cambiar tema</button>
+      <button id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="doctors-content">
+    <h1>Doctores</h1>
+    <p>Catálogo de doctores del consultorio y su especialidad.</p>
+
+    <p id="doctors-message" class="doctors-message" role="status" hidden></p>
+
+    <div class="doctors-layout">
+      <section class="doctors-card doctors-side" aria-labelledby="form-title">
+        <h2 id="form-title">Nuevo doctor</h2>
+
+        <form id="doctor-form" action="#" method="post">
+          <input type="hidden" id="doctor-id" name="doctor_id">
+
+          <div class="doctors-field">
+            <label for="doctor-name">Nombre completo</label>
+            <input type="text" id="doctor-name" name="doctor_name" autocomplete="off">
+          </div>
+
+          <div class="doctors-field">
+            <label for="license">Cédula profesional</label>
+            <input type="text" id="license" name="license" maxlength="8" placeholder="7 u 8 dígitos">
+          </div>
+
+          <div class="doctors-field">
+            <label for="specialty">Especialidad</label>
+            <select id="specialty" name="specialty"></select>
+          </div>
+
+          <div class="doctors-field">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" name="phone" maxlength="10" placeholder="10 dígitos">
+          </div>
+
+          <div class="doctors-actions">
+            <button type="submit">Guardar</button>
+            <button type="reset" class="doctors-button-secondary">Borrar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="doctors-card doctors-list" aria-labelledby="list-title">
+        <div class="doctors-list-header">
+          <h2 id="list-title">Listado de doctores</h2>
+          <button type="button" id="print-button" class="doctors-button-secondary">Imprimir listado</button>
+        </div>
+
+        <div class="doctors-filters">
+          <div class="doctors-field">
+            <label for="search-input">Buscar</label>
+            <input type="search" id="search-input" name="search" placeholder="Nombre o cédula">
+          </div>
+
+          <div class="doctors-field">
+            <label for="specialty-filter">Especialidad</label>
+            <select id="specialty-filter" name="specialty_filter"></select>
+          </div>
+        </div>
+
+        <table>
+          <caption>Doctores registrados</caption>
+          <thead>
+            <tr>
+              <th scope="col">Doctor</th>
+              <th scope="col">Cédula</th>
+              <th scope="col">Especialidad</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Citas pendientes</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="doctors-table-body"></tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="doctors-footer">
+    <p>&copy; 2026 Medicitas</p>
+  </footer>
+
+  <script src="../js/compartido/tema.js" defer></script>
+  <script src="../js/paginas/doctores.js" defer></script>
+</body>
+</html>
