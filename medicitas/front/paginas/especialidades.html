@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de especialidades de Medicitas">
+  <title>Especialidades | Medicitas</title>
+  <link rel="stylesheet" href="../css/compartido/base.css">
+  <link rel="stylesheet" href="../css/paginas/especialidades.css">
+</head>
+<body>
+  <header class="specialties-header">
+    <a class="specialties-header-brand" href="administrador.html">Medicitas</a>
+
+    <div class="specialties-header-user">
+      <span id="user-role">Administrador</span>
+      <button id="theme-button" type="button" aria-label="Cambiar tema">Cambiar tema</button>
+      <button id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="specialties-content">
+    <h1>Especialidades</h1>
+    <p>Catálogo de especialidades médicas del consultorio.</p>
+
+    <p id="specialties-message" class="specialties-message" role="status" hidden></p>
+
+    <div class="specialties-layout">
+      <section class="specialties-card specialties-side" aria-labelledby="form-title">
+        <h2 id="form-title">Nueva especialidad</h2>
+
+        <form id="specialty-form" action="#" method="post">
+          <input type="hidden" id="specialty-id" name="specialty_id">
+
+          <div class="specialties-field">
+            <label for="specialty-name">Nombre</label>
+            <input type="text" id="specialty-name" name="specialty_name" autocomplete="off">
+          </div>
+
+          <div class="specialties-field">
+            <label for="description">Descripción</label>
+            <textarea id="description" name="description" rows="3"></textarea>
+          </div>
+
+          <div class="specialties-actions">
+            <button type="submit">Guardar</button>
+            <button type="reset" class="specialties-button-secondary">Borrar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="specialties-card specialties-list" aria-labelledby="list-title">
+        <h2 id="list-title">Listado de especialidades</h2>
+
+        <div class="specialties-field">
+          <label for="search-input">Buscar</label>
+          <input type="search" id="search-input" name="search" placeholder="Nombre o descripción">
+        </div>
+
+        <table>
+          <caption>Especialidades registradas</caption>
+          <thead>
+            <tr>
+              <th scope="col">Especialidad</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Doctores</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="specialties-table-body"></tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="specialties-footer">
+    <p>&copy; 2026 Medicitas</p>
+  </footer>
+
+  <script src="../js/compartido/tema.js" defer></script>
+  <script src="../js/paginas/especialidades.js" defer></script>
+</body>
+</html>

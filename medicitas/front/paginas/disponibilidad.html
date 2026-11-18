@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Horario de atención de los doctores">
+  <title>Disponibilidad | Medicitas</title>
+  <link rel="stylesheet" href="../css/compartido/base.css">
+  <link rel="stylesheet" href="../css/paginas/disponibilidad.css">
+</head>
+<body>
+  <header class="availability-header">
+    <a class="availability-header-brand" id="panel-link" href="administrador.html">Medicitas</a>
+
+    <div class="availability-header-user">
+      <span id="user-role"></span>
+      <button id="theme-button" type="button" aria-label="Cambiar tema">Cambiar tema</button>
+      <button id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="availability-content">
+    <h1>Disponibilidad</h1>
+    <p>Marca los días y el horario en que el doctor atiende.</p>
+
+    <p id="availability-message" class="availability-message" role="status" hidden></p>
+
+    <section class="availability-card" aria-labelledby="schedule-title">
+      <div class="availability-field">
+        <label for="doctor-select">Doctor</label>
+        <select id="doctor-select" name="doctor"></select>
+      </div>
+
+      <h2 id="schedule-title">Horario semanal</h2>
+
+      <form id="availability-form" action="#" method="post">
+        <table>
+          <caption>Días y horas de atención</caption>
+          <thead>
+            <tr>
+              <th scope="col">Día</th>
+              <th scope="col">Atiende</th>
+              <th scope="col">Hora de inicio</th>
+              <th scope="col">Hora de fin</th>
+            </tr>
+          </thead>
+          <tbody id="schedule-body"></tbody>
+        </table>
+
+        <div class="availability-actions">
+          <button type="submit">Guardar</button>
+          <button type="button" id="copy-button" class="availability-button-secondary">Copiar lunes a lunes-viernes</button>
+          <button type="button" id="discard-button" class="availability-button-secondary">Descartar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="availability-footer">
+    <p>&copy; 2026 Medicitas</p>
+  </footer>
+
+  <script src="../js/compartido/tema.js" defer></script>
+  <script src="../js/paginas/disponibilidad.js" defer></script>
+</body>
+</html>

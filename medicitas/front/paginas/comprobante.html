@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comprobante de cita de Medicitas">
+  <title>Comprobante | Medicitas</title>
+  <link rel="stylesheet" href="../css/compartido/base.css">
+  <link rel="stylesheet" href="../css/paginas/comprobante.css">
+</head>
+<body>
+  <header class="receipt-header">
+    <a class="receipt-header-brand" href="../index.html">Medicitas</a>
+
+    <div class="receipt-header-user">
+      <button id="theme-button" type="button" aria-label="Cambiar tema">Cambiar tema</button>
+      <button id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="receipt-content">
+    <p id="receipt-message" class="receipt-message is-error" role="alert" hidden></p>
+
+    <div class="receipt-actions">
+      <button type="button" id="print-button">Imprimir</button>
+      <button type="button" id="back-button" class="receipt-button-secondary">Volver</button>
+    </div>
+
+    <article id="receipt-sheet" class="receipt-sheet" hidden>
+      <header class="receipt-top">
+        <span class="receipt-logo">+ Medicitas</span>
+        <span class="receipt-folio">Folio: <span id="folio"></span></span>
+      </header>
+
+      <p id="appointment-date" class="receipt-date"></p>
+
+      <dl class="receipt-data">
+        <dt>Paciente</dt>
+        <dd id="patient-name"></dd>
+
+        <dt>Teléfono</dt>
+        <dd id="patient-phone"></dd>
+
+        <dt>Doctor</dt>
+        <dd id="doctor-name"></dd>
+
+        <dt>Especialidad</dt>
+        <dd id="specialty-name"></dd>
+
+        <dt>Motivo</dt>
+        <dd id="reason"></dd>
+      </dl>
+
+      <footer class="receipt-notes">
+        <p><strong>Indicaciones:</strong> llega 10 minutos antes de tu cita y trae una identificación.
+          Si no puedes asistir, cancela tu cita con anticipación.</p>
+      </footer>
+
+      <span id="cancelled-stamp" class="receipt-stamp" hidden>CANCELADA</span>
+    </article>
+  </main>
+
+  <footer class="receipt-footer">
+    <p>&copy; 2026 Medicitas</p>
+  </footer>
+
+  <script src="../js/compartido/tema.js" defer></script>
+  <script src="../js/paginas/comprobante.js" defer></script>
+</body>
+</html>
