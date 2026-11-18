@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gestión de cuentas del personal de Medicitas">
+  <title>Usuarios | Medicitas</title>
+  <link rel="stylesheet" href="../css/compartido/base.css">
+  <link rel="stylesheet" href="../css/paginas/usuarios.css">
+</head>
+<body>
+  <header class="users-header">
+    <a class="users-header-brand" href="administrador.html">Medicitas</a>
+
+    <div class="users-header-user">
+      <span>Administrador</span>
+      <button id="theme-button" type="button" aria-label="Cambiar tema">Cambiar tema</button>
+      <button id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="users-content">
+    <header class="users-content-header">
+      <h1>Usuarios</h1>
+      <p>Crea y controla las cuentas de recepción, doctores y administradores.</p>
+    </header>
+
+    <p id="users-message" class="users-message" role="status" hidden></p>
+
+    <div id="password-box" class="users-password-box" hidden>
+      <p><strong id="password-title"></strong></p>
+      <p>Contraseña temporal: <code id="password-value"></code></p>
+      <button type="button" id="password-close" class="users-button-secondary">Cerrar</button>
+    </div>
+
+    <div class="users-layout">
+      <section class="users-card users-side" aria-labelledby="form-title">
+        <h2 id="form-title">Nueva cuenta</h2>
+
+        <form id="user-form" action="#" method="post">
+          <input type="hidden" id="user-id" name="user_id">
+
+          <div class="users-field">
+            <label for="full-name">Nombre completo</label>
+            <input type="text" id="full-name" name="full_name" autocomplete="off">
+          </div>
+
+          <div class="users-field">
+            <label for="username">Usuario</label>
+            <input type="text" id="username" name="username" autocomplete="off">
+          </div>
+
+          <div class="users-field">
+            <label for="role">Rol</label>
+            <select id="role" name="role">
+              <option value="">Selecciona un rol</option>
+              <option value="reception">Recepción</option>
+              <option value="doctor">Doctor</option>
+              <option value="admin">Administrador</option>
+            </select>
+          </div>
+
+          <div id="doctor-field" class="users-field" hidden>
+            <label for="doctor">Doctor del catálogo</label>
+            <select id="doctor" name="doctor"></select>
+          </div>
+
+          <div class="users-field">
+            <label for="password" id="password-label">Contraseña</label>
+            <input type="password" id="password" name="password" autocomplete="new-password">
+            <small>Mínimo 8 caracteres, con letras y números.</small>
+          </div>
+
+          <div class="users-actions">
+            <button type="submit" id="save-button">Crear cuenta</button>
+            <button type="reset" class="users-button-secondary">Borrar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="users-card users-list" aria-labelledby="list-title">
+        <h2 id="list-title">Cuentas</h2>
+
+        <div class="users-filters">
+          <div class="users-field">
+            <label for="search-input">Buscar</label>
+            <input type="search" id="search-input" name="search" placeholder="Nombre o usuario">
+          </div>
+
+          <div class="users-field">
+            <label for="role-filter">Rol</label>
+            <select id="role-filter" name="role_filter">
+              <option value="">Todos</option>
+              <option value="patient">Paciente</option>
+              <option value="reception">Recepción</option>
+              <option value="doctor">Doctor</option>
+              <option value="admin">Administrador</option>
+            </select>
+          </div>
+        </div>
+
+        <table>
+          <caption>Cuentas registradas</caption>
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Rol</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="users-table-body"></tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="users-footer">
+    <p>&copy; 2026 Medicitas</p>
+  </footer>
+
+  <script src="../js/compartido/tema.js" defer></script>
+  <script src="../js/paginas/usuarios.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panel del paciente de Medicitas">
+  <title>Mi cuenta | Medicitas</title>
+  <link rel="stylesheet" href="../css/compartido/base.css">
+  <link rel="stylesheet" href="../css/paginas/paciente.css">
+</head>
+<body>
+  <header class="account-header">
+    <a class="account-header-brand" href="../index.html">Medicitas</a>
+
+    <div class="account-header-user">
+      <span>Paciente</span>
+      <button id="theme-button" type="button" aria-label="Cambiar tema">Cambiar tema</button>
+      <button id="logout-button" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="account-content">
+    <header class="account-content-header">
+      <div>
+        <h1 id="welcome-title">Mi cuenta</h1>
+        <p>Consulta tus citas, tus datos y tus archivos.</p>
+      </div>
+      <a class="account-big-button" href="citas.html">Agendar cita</a>
+    </header>
+
+    <p id="account-message" class="account-message" role="status" hidden></p>
+
+    <section class="account-card" aria-labelledby="data-title">
+      <div class="account-card-header">
+        <h2 id="data-title">Mis datos</h2>
+        <button type="button" id="edit-button" class="account-button-secondary">Editar</button>
+      </div>
+
+      <form id="account-form" action="#" method="post">
+        <div class="account-field">
+          <label for="first-name">Nombre(s)</label>
+          <input type="text" id="first-name" name="first_name" disabled>
+        </div>
+
+        <div class="account-field">
+          <label for="last-name">Apellidos</label>
+          <input type="text" id="last-name" name="last_name" disabled>
+        </div>
+
+        <div class="account-field">
+          <label for="phone">Teléfono</label>
+          <input type="tel" id="phone" name="phone" maxlength="10" disabled>
+        </div>
+
+        <div class="account-field">
+          <label for="birth-date">Fecha de nacimiento</label>
+          <input type="date" id="birth-date" name="birth_date" disabled>
+        </div>
+
+        <div class="account-field">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" disabled>
+        </div>
+
+        <div id="form-actions" class="account-actions" hidden>
+          <button type="submit">Guardar</button>
+          <button type="button" id="cancel-button" class="account-button-secondary">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="account-card" aria-labelledby="upcoming-title">
+      <h2 id="upcoming-title">Mis próximas citas</h2>
+      <ul id="upcoming-list" class="account-list"></ul>
+    </section>
+
+    <section class="account-card" aria-labelledby="files-title">
+      <h2 id="files-title">Mis archivos</h2>
+      <ul id="files-list" class="account-list"></ul>
+    </section>
+
+    <section class="account-card" aria-labelledby="history-title">
+      <h2 id="history-title">Historial de citas</h2>
+      <ul id="history-list" class="account-list"></ul>
+    </section>
+  </main>
+
+  <footer class="account-footer">
+    <p>&copy; 2026 Medicitas</p>
+  </footer>
+
+  <script src="../js/compartido/tema.js" defer></script>
+  <script src="../js/paginas/paciente.js" defer></script>
+</body>
+</html>

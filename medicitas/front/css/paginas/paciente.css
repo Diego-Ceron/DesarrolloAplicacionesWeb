@@ -1,0 +1,207 @@
+[hidden] {
+  display: none !important;
+}
+
+.account-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: #287f91;
+  color: #ffffff;
+}
+
+.account-header-brand {
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.account-header-user button {
+  margin-left: 0.5rem;
+  border: 1px solid rgb(255 255 255 / 70%);
+  background-color: transparent;
+}
+
+.account-footer {
+  padding: 1rem;
+  border-top: 1px solid rgb(128 128 128 / 30%);
+  text-align: center;
+}
+
+.account-content {
+  width: min(100% - 2rem, 50rem);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.account-content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.account-content-header h1 {
+  margin: 0;
+}
+
+.account-big-button {
+  padding: 0.9rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #287f91;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.account-card {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid rgb(128 128 128 / 30%);
+  border-radius: 0.75rem;
+}
+
+.account-card h2 {
+  margin-top: 0;
+}
+
+.account-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.account-field {
+  margin-bottom: 0.9rem;
+}
+
+.account-field label {
+  display: block;
+  font-weight: 700;
+}
+
+.account-field input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid rgb(128 128 128 / 50%);
+  border-radius: 0.375rem;
+  background-color: transparent;
+  color: inherit;
+}
+
+.account-field input:disabled {
+  border-color: transparent;
+  padding-left: 0;
+}
+
+.account-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #287f91;
+  border-radius: 0.375rem;
+  background-color: #287f91;
+  color: #ffffff;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.account-button-secondary {
+  background-color: transparent;
+  color: inherit;
+}
+
+.account-button-danger {
+  border-color: #c62828;
+  background-color: #c62828;
+}
+
+.account-message {
+  padding: 0.75rem;
+  border-left: 0.3rem solid #287f91;
+  background-color: rgb(40 127 145 / 10%);
+}
+
+.account-message.is-error {
+  border-color: #c62828;
+}
+
+.account-list {
+  padding: 0;
+  list-style: none;
+}
+
+.account-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid rgb(128 128 128 / 30%);
+  border-radius: 0.5rem;
+}
+
+.account-item-info {
+  flex: 1;
+}
+
+.account-item-info small {
+  display: block;
+  opacity: 0.75;
+}
+
+.account-status {
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #8a6100;
+}
+
+.status-attended {
+  background-color: #dff3e3;
+  color: #1b5e20;
+}
+
+.status-arrived {
+  background-color: #dceefb;
+  color: #0d47a1;
+}
+
+.status-missed,
+.status-cancelled {
+  background-color: #fde0dc;
+  color: #c62828;
+}
+
+@media (max-width: 48rem) {
+  .account-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .account-big-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .account-item {
+    flex-wrap: wrap;
+  }
+}

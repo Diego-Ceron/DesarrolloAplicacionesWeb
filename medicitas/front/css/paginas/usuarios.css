@@ -1,0 +1,246 @@
+[hidden] {
+  display: none !important;
+}
+
+.users-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: #287f91;
+  color: #ffffff;
+}
+
+.users-header-brand {
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.users-header-user button {
+  margin-left: 0.5rem;
+  border: 1px solid rgb(255 255 255 / 70%);
+  background-color: transparent;
+}
+
+.users-footer {
+  padding: 1rem;
+  border-top: 1px solid rgb(128 128 128 / 30%);
+  text-align: center;
+}
+
+.users-content {
+  width: min(100% - 3rem, 75rem);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.users-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.users-side {
+  flex: 0 0 22rem;
+}
+
+.users-list {
+  flex: 1;
+}
+
+.users-card {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid rgb(128 128 128 / 30%);
+  border-radius: 0.75rem;
+}
+
+.users-card h2 {
+  margin-top: 0;
+}
+
+.users-field {
+  margin-bottom: 0.9rem;
+}
+
+.users-field label {
+  display: block;
+  font-weight: 700;
+}
+
+.users-field input,
+.users-field select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid rgb(128 128 128 / 50%);
+  border-radius: 0.375rem;
+  background-color: transparent;
+  color: inherit;
+}
+
+.users-field small {
+  opacity: 0.75;
+}
+
+.users-filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.users-filters .users-field:first-child {
+  flex: 1;
+}
+
+.users-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #287f91;
+  border-radius: 0.375rem;
+  background-color: #287f91;
+  color: #ffffff;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.users-button-secondary {
+  background-color: transparent;
+  color: inherit;
+}
+
+.users-button-danger {
+  border-color: #c62828;
+  background-color: #c62828;
+}
+
+.users-message {
+  padding: 0.75rem;
+  border-left: 0.3rem solid #287f91;
+  background-color: rgb(40 127 145 / 10%);
+}
+
+.users-message.is-error {
+  border-color: #c62828;
+}
+
+.users-password-box {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-left: 0.3rem solid #b8860b;
+  background-color: #fff3cd;
+  color: #5c4400;
+}
+
+.users-password-box p {
+  margin: 0 0 0.5rem;
+}
+
+.users-password-box code {
+  padding: 0.2rem 0.5rem;
+  background-color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  padding: 0.5rem 0;
+  text-align: left;
+  font-weight: 700;
+}
+
+th,
+td {
+  padding: 0.6rem;
+  border-bottom: 1px solid rgb(128 128 128 / 30%);
+  text-align: left;
+}
+
+td button {
+  margin: 0.1rem;
+  font-size: 0.85rem;
+}
+
+.users-role {
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.role-admin {
+  background-color: #ede0fb;
+  color: #5b21b6;
+}
+
+.role-doctor {
+  background-color: #dceefb;
+  color: #0d47a1;
+}
+
+.role-reception {
+  background-color: #dff3e3;
+  color: #1b5e20;
+}
+
+.role-patient {
+  background-color: #eeeeee;
+  color: #444444;
+}
+
+.is-inactive {
+  opacity: 0.5;
+}
+
+@media (max-width: 48rem) {
+  .users-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .users-layout,
+  .users-filters {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .users-side {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid rgb(128 128 128 / 30%);
+    border-radius: 0.75rem;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    border: 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 700;
+  }
+}
