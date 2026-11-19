@@ -1,4 +1,3 @@
-
 /* CONTENEDOR PRINCIPAL */
 
 .page {
@@ -22,6 +21,21 @@
 .subtitulo,
 .muted {
     color: #667780;
+}
+
+/* ACCIONES DEL ENCABEZADO */
+
+.acciones-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.acciones-header .btn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
 }
 
 /* DISTRIBUCIÓN */
@@ -86,12 +100,15 @@
 }
 
 .btn {
+    display: inline-block;
     border: 0;
     border-radius: 8px;
     padding: 10px 15px;
     font-weight: bold;
     background: #176b87;
     color: white;
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn.secundario {
@@ -294,6 +311,14 @@ th {
     .page-header {
         align-items: flex-start;
         flex-direction: column;
+    }
+
+    .acciones-header {
+        width: 100%;
+    }
+
+    .acciones-header .btn {
+        flex: 1;
     }
 
     .filtros {
